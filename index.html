@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hi-Latn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaam Chowk — mohalle ka kaam, mohalle ke log</title>
+<meta name="description" content="Mohalle ka labour marketplace. Kaam post karo, paas ka verified labour uthayega. Koi commission nahi.">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Seedha kaam par jao</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#/" aria-label="Kaam Chowk, ghar">
+      <span class="brand-name">Kaam Chowk</span>
+      <span class="brand-u" aria-hidden="true"></span>
+    </a>
+    <div class="top-right">
+      <nav class="nav" aria-label="Mukhya">
+        <a href="#/board">Kaam board</a>
+        <a href="#/labour">Labour</a>
+        <a href="#/how">Kaise chalta hai</a>
+      </nav>
+      <div class="nav-auth" id="nav-auth"></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============ HOME ============ -->
+  <div id="view-home">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div>
+        <p class="kicker">mohalle ka labour marketplace</p>
+        <h1 id="hero-title">Mohalle ka kaam,<br>mohalle ke log.</h1>
+        <p class="hero-sub">Mistri, painter, bijli wala, mazdoor — sab apne mohalle me. Kaam post karo, paas ka labour uthayega, seedha phone par baat. Beech me koi commission nahi.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" type="button" data-action="post">Kaam post karo</button>
+          <button class="btn btn-ghost" type="button" data-action="register-labour">Labour ban kar judo</button>
+        </div>
+        <p class="live-line"><span class="live-dot" aria-hidden="true"></span><span id="live-line">Board load ho raha hai…</span></p>
+      </div>
+      <div class="peek" id="peek" aria-label="Board par naye slips"></div>
+    </section>
+
+    <div class="wrap">
+      <div class="stats" id="stats" aria-label="Platform ek nazar me"></div>
+    </div>
+
+    <section class="board wrap" id="sec-board" aria-labelledby="board-title">
+      <div class="board-head">
+        <div>
+          <h2 id="board-title">Aaj ka board</h2>
+          <p class="board-count" id="board-count"></p>
+        </div>
+      </div>
+      <div class="controls">
+        <input class="search" id="search" type="text" placeholder="Jagah ya kaam likho (jaise: plumbing, Shivaji Nagar)" aria-label="Board par search karo">
+        <div class="filters" id="chips" role="group" aria-label="Kaam ki kism se chhaanto"></div>
+      </div>
+      <div class="board-grid" id="board-grid"></div>
+    </section>
+
+    <section class="paper-zone">
+      <div class="wrap">
+        <div id="sec-how">
+          <h2>Chalta kaise hai?</h2>
+          <div class="steps">
+            <div class="step">
+              <span class="step-no" aria-hidden="true">1</span>
+              <h3>Account banao, OTP se verify</h3>
+              <p>Mobile number se free account. Kaam dene wale ya kaam karne wale — jo tum ho wo chuno.</p>
+            </div>
+            <div class="step">
+              <span class="step-no" aria-hidden="true">2</span>
+              <h3>Slip lagao, ya slip uthao</h3>
+              <p>Kaam post karo, ya board se apne hunar ka kaam utha lo. Ek kaam ek hi labour ko milta hai.</p>
+            </div>
+            <div class="step">
+              <span class="step-no" aria-hidden="true">3</span>
+              <h3>Phone par baat, kaam, rating</h3>
+              <p>Kaam uthate hi dono ko ek-doosre ka number dikhta hai. Kaam ke baad rating milti hai — achha kaam, achha naam.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="sec-labour" class="labour-section">
+          <h2>Mohalle ke labour</h2>
+          <p class="sub" style="margin:8px 0 0;color:var(--ink-soft);font-size:14.5px">Naam, hunar, rating — dekho aur seedha phone karo. Number dekhne ke liye “kaam dene wale” account se login karo.</p>
+          <div class="dir-controls">
+            <input id="dir-q" type="text" placeholder="Naam ya mohalla" aria-label="Labour dhoondho">
+            <select id="dir-skill" aria-label="Hunar chuno"></select>
+          </div>
+          <div class="dir-grid" id="dir-grid"></div>
+          <div class="cta-band">
+            <div>
+              <h3>Kaam dhoondh rahe ho?</h3>
+              <p>Free profile banao. Mohalle ke log tumhe khud dhoondhenge, aur tum board se kaam utha sakte ho. Koi dalal nahi.</p>
+            </div>
+            <button class="btn-ink" type="button" data-action="register-labour">Labour profile banao</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ DASHBOARDS (filled by app.js) ============ -->
+  <div id="view-dash" class="dash wrap" hidden></div>
+  <div id="view-admin" class="dash wrap" hidden></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="foot-brand">Kaam Chowk</p>
+      <p class="foot-note">Mohalle ka kaam, mohalle ke log. Kaam dene wala aur lene wala seedha phone par baat karte hain — beech me koi commission nahi. Kaam shuru karne se pehle rate aur samay phone par pakka kar lo.</p>
+    </div>
+    <div class="foot-side">
+      <a class="reset" href="#/board">Kaam board</a>
+      <a class="reset" href="#/labour">Labour dhoondho</a>
+    </div>
+  </div>
+</footer>
+
+<div id="modal-root"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/app.js"></script>
+</body>
+</html>
